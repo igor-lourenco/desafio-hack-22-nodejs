@@ -26,4 +26,12 @@ repository.create = (card) => {
     });
 };
 
+repository.update = (id, card) =>{
+    return new Promise((resolve, reject) => {
+        db.update({_id : id}, {...card} , (err, card) =>{
+            err ? reject(err) : resolve(card);
+        });
+    });
+};
+
 module.exports = repository;

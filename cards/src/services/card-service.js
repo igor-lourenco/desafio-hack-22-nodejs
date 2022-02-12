@@ -23,4 +23,8 @@ service.create = async (card) => {
     return await repository.create(createCard);
 }
 
+service.update = async(id, card) => {
+    return await repository.update(id, card);
+}
+
 module.exports = service;

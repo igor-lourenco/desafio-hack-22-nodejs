@@ -7,4 +7,6 @@ module.exports = (app) => {
     app.route("/cards/:id").get(controller.findById);
 
     app.route("/cards").post(controller.create);
+
+    app.route("/cards/:id").put(controller.update);
 }
