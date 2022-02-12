@@ -1,3 +1,4 @@
+const res = require("express/lib/response");
 const service = require("../services/card-service");
 const controller = {}
 
@@ -32,5 +33,17 @@ controller.update = async (req, res) => {
     await service.update(id, cardUpdate);
     return res.status(200).json(cardUpdate);
 };
+
+controller.delete = async (req,res) => {
+    const id = req.params.id;
+    const card = await service.findById(id);
+
+    if(!card){
+        return res.status(404).json({message : "Id não existe"});
+    }
+
+    await service.delete(id);
+    return res.status(204).json(null);
+}
 
 module.exports = controller;

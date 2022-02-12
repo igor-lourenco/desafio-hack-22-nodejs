@@ -9,4 +9,6 @@ module.exports = (app) => {
     app.route("/cards").post(controller.create);
 
     app.route("/cards/:id").put(controller.update);
+
+    app.route('/cards/:id').delete(controller.delete);
 }

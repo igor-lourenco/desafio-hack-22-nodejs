@@ -4,11 +4,11 @@ const service = {}
 
 service.findAll = async() => {
     return await repository.findAll();
-}
+};
 
 service.findById = async(id) => {
     return await repository.findById(id);
-}
+};
 
 service.create = async (card) => {
     const createCard =  new Card();
@@ -21,10 +21,14 @@ service.create = async (card) => {
     createCard.setCity(card.city);
 
     return await repository.create(createCard);
-}
+};
 
 service.update = async(id, card) => {
     return await repository.update(id, card);
-}
+};
+
+service.delete = async(id) => {
+    return await repository.delete(id);
+};
 
 module.exports = service;
