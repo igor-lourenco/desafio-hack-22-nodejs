@@ -6,4 +6,8 @@ service.findAll = async() => {
     return await repository.findAll();
 }
 
+service.findById = async(id) => {
+    return await repository.findById(id);
+}
+
 module.exports = service;

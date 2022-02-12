@@ -10,4 +10,12 @@ repository.findAll = () => {
     });
 };
 
+repository.findById = (id) => {
+    return new Promise((resolve, reject) => {
+        db.findOne({ _id: id },  (err, card)  => {  
+            err ? reject(err) : resolve(card);
+        });
+    });
+};
+
 module.exports = repository;
