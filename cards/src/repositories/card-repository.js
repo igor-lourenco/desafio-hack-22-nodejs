@@ -42,4 +42,15 @@ repository.delete = (id) => {
     });
 };
 
+repository.paginationAndSorting = (sorts, skip, limit) => {
+    
+    return new Promise((resolve, reject) => {
+        db.find({}).sort(sorts).limit(new Number(limit)).skip(new Number(skip)).exec(function (err, cards) {
+            console.log(cards)
+            err ? reject(err) : resolve(cards);
+          });
+    });
+};
+
+
 module.exports = repository;

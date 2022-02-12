@@ -1,0 +1,38 @@
+GET http://localhost:3000/cards HTTP/1.1
+
+###
+POST http://localhost:3000/cards HTTP/1.1
+content-type: application/json
+
+{
+    "cardNumber": 10,
+    "embossName": "MaikeRodrigues",
+    "customerName": "Teste",
+    "documentNumber": 0,
+    "motherName": "Teste",
+    "address": "Teste",
+    "city": "Teste"
+}
+###
+PUT http://localhost:3000/cards/mSRcnOJP1lAnlwfs HTTP/1.1
+content-type: application/json
+
+{
+    "cardNumber": 10,
+    "embossName": "Maike",
+    "customerName": "Rodrigues2",
+    "documentNumber": 0,
+    "motherName": "Teste",
+    "address": "Teste",
+    "city": "Teste"
+}
+
+###
+DELETE  http://localhost:3000/cards/mSRcnOJP1lAnlwfs HTTP/1.1
+
+
+###
+GET http://localhost:3000/cards/1 HTTP/1.1
+
+###
+GET http://localhost:3000/cards/paginationAndSorting?sorts={embossName:1}&skip=2&limit=1 HTTP/1.1

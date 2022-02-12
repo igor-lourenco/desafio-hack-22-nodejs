@@ -44,6 +44,18 @@ controller.delete = async (req,res) => {
 
     await service.delete(id);
     return res.status(204).json(null);
-}
+};
+
+controller.paginationAndSorting = async(req, res) => {
+    console.log(req.query);
+
+    const sorts = req.query.sorts
+    const skip = req.query.skip 
+    const limit = req.query.limit
+
+    const cards = await service.paginationAndSorting(sorts, skip, limit);
+
+    return res.status(200).json(cards);
+};
 
 module.exports = controller;

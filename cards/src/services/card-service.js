@@ -31,4 +31,8 @@ service.delete = async(id) => {
     return await repository.delete(id);
 };
 
+service.paginationAndSorting = async (sort, skip, limit) => {
+    return await repository.paginationAndSorting(sort, skip, limit);
+};
+
 module.exports = service;
