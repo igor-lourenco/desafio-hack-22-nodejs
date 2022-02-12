@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
-const routes = require('../routes/card-route')
+const routes = require('../routes/card-routes')
 const path = require('path')
 
 app.set('clientPath', path.join(__dirname, '../..', 'client'))
