@@ -1,6 +1,6 @@
 module.exports = class Card {
     //propriedades e funções da classe aqui
-    constructor(cardNumber = 0, embossName = '', customerName = '', documentNumber = 0, motherName = '', address = '', city = '') {
+    constructor(cardNumber = '', embossName = '', customerName = '', documentNumber = '', motherName = '', address = '', city = '') {
         this.cardNumber = cardNumber;
         this.embossName = embossName;
         this.customerName = customerName;

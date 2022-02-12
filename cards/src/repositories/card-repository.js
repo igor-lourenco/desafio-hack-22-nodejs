@@ -18,4 +18,12 @@ repository.findById = (id) => {
     });
 };
 
+repository.create = (card) => {
+    return new Promise((resolve, reject) =>{
+        db.insert(card, (err, newCard) =>{
+            err ? reject(err) : resolve(newCard);
+        });
+    });
+};
+
 module.exports = repository;

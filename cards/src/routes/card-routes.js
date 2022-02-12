@@ -5,4 +5,6 @@ module.exports = (app) => {
     app.route("/cards").get(controller.findAll);
 
     app.route("/cards/:id").get(controller.findById);
+
+    app.route("/cards").post(controller.create);
 }

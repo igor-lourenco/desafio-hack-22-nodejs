@@ -16,4 +16,9 @@ controller.findById = async(req, res) => {
     return res.status(200).json(card);
 }
 
+controller.create = async(req, res) =>{
+    const card = await service.create(req.body);
+    return res.status(201).json(card);
+}
+
 module.exports = controller;
